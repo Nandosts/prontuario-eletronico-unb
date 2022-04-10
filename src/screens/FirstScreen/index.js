@@ -1,7 +1,15 @@
 import React from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Button,
+  TextInput,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { styles } from "./styles";
+import { sendEmail } from "../../components/SendEmail";
 import { GradientBtn } from "../../components/GradientButton";
 
 export const FirstScreen = () => {
@@ -9,9 +17,14 @@ export const FirstScreen = () => {
   const [subject, onChangeSubject] = React.useState("");
   const [text, onChangeText] = React.useState("");
   function onPressSendData() {
-    console.log("professional", professional);
-    console.log("subject", subject);
-    console.log("text", text);
+    sendEmail(
+      {professional},
+      {subject},
+      {text},
+      { cc: "fernando.jsts@gmail.com; user2@domain.com; userx@domain1.com" }
+    ).then(() => {
+      console.log("Your message was successfully sent!");
+    });
   }
   return (
     <LinearGradient
