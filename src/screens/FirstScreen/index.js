@@ -12,16 +12,21 @@ import { LinearGradient } from "expo-linear-gradient";
 import { styles } from "./styles";
 import { sendEmail } from "../../components/SendEmail";
 import { GradientBtn } from "../../components/GradientButton";
+import { Select } from "../../components/Select";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export const FirstScreen = () => {
-  const [professional, onChangeProfessional] = React.useState("");
-  const [subject, onChangeSubject] = React.useState("");
-  const [text, onChangeText] = React.useState("");
+  const [professional, setProfessional] = React.useState("");
+  const [subject, setSubject] = React.useState("");
+  const [text, setText] = React.useState("");
   function onPressSendData() {
     sendEmail(professional, subject, text).then(() => {
       console.log("Your message was successfully sent!");
     });
+  }
+
+  function onSetProfessional(item) {
+    setProfessional(item)
   }
   return (
     <LinearGradient
@@ -44,12 +49,10 @@ export const FirstScreen = () => {
         <View style={styles.content}>
           <View>
             <Text style={styles.subtitle}>Profissional:</Text>
-            <TextInput
-              multiline
+            <Select 
               placeholder={"Selecione"}
-              style={styles.inputStyle}
-              onChangeText={onChangeProfessional}
-              value={professional}
+              // style={styles.inputStyle}
+              setValue={onSetProfessional}
             />
           </View>
           <View>
@@ -58,7 +61,7 @@ export const FirstScreen = () => {
               multiline
               placeholder={"Insira o assunto"}
               style={styles.inputStyle}
-              onChangeText={onChangeSubject}
+              onChangeText={setSubject}
               value={subject}
             />
           </View>
@@ -68,7 +71,7 @@ export const FirstScreen = () => {
               multiline
               placeholder={"Digitar..."}
               style={styles.inputStyle}
-              onChangeText={onChangeText}
+              onChangeText={setText}
               value={text}
               numberOfLines={9}
             />
