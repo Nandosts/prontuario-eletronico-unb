@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     color: "white",
     marginBottom: 16,
     fontFamily: "sans-serif",
-    fontWeight: 700,
+    fontWeight: "700",
     width: "60%",
     fontSize: 30,
     lineHeight: 36,
@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
   subtitle: {
     fontFamily: "sans-serif",
     fontSize: 20,
-    fontWeight: 600,
+    fontWeight: "600",
   },
   inputStyle: {
     backgroundColor: "#EEEEEE",

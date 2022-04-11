@@ -15,7 +15,7 @@ export const GradientBtn = (props) => {
           color: "white",
           fontFamily: "sans-serif",
           fontSize: 20,
-          fontWeight: 700,
+          fontWeight: "700",
           textAlign: "center",
         }}
       >
