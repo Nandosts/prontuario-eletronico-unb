@@ -2,16 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  linearGradient: {
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 5,
-    height: 200,
-    width: 350,
   },
   content: {
     paddingHorizontal: 30,
@@ -47,7 +39,9 @@ export const styles = StyleSheet.create({
   },
   opacityBtn: {
     marginHorizontal: "auto",
-    width: "80%",
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
   },
   button: {
     width: "100%",
