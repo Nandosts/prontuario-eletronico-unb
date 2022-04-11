@@ -51,7 +51,6 @@ export const FirstScreen = () => {
             <Text style={styles.subtitle}>Profissional:</Text>
             <Select 
               placeholder={"Selecione"}
-              // style={styles.inputStyle}
               setValue={onSetProfessional}
             />
           </View>
@@ -70,7 +69,7 @@ export const FirstScreen = () => {
             <TextInput
               multiline
               placeholder={"Digitar..."}
-              style={styles.inputStyle}
+              style={[styles.inputStyle, {textAlignVertical: "top"}]}
               onChangeText={setText}
               value={text}
               numberOfLines={9}
