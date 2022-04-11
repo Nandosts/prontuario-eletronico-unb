@@ -19,12 +19,7 @@ export const FirstScreen = () => {
   const [subject, onChangeSubject] = React.useState("");
   const [text, onChangeText] = React.useState("");
   function onPressSendData() {
-    sendEmail(
-      {professional},
-      {subject},
-      {text},
-      { cc: "fernando.jsts@gmail.com; user2@domain.com; userx@domain1.com" }
-    ).then(() => {
+    sendEmail(professional, subject, text).then(() => {
       console.log("Your message was successfully sent!");
     });
   }
@@ -37,7 +32,10 @@ export const FirstScreen = () => {
     >
       <KeyboardAwareScrollView
         resetScrollToCoords={{ x: 0, y: 0 }}
-        contentContainerStyle={[styles.container, {height: Dimensions.get("window").height}]}
+        contentContainerStyle={[
+          styles.container,
+          { height: Dimensions.get("window").height },
+        ]}
         scrollEnabled={false}
         style={{ height: Dimensions.get("window").height }}
         automaticallyAdjustContentInsets={false}
