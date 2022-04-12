@@ -1,15 +1,25 @@
-// Example to Pick and Upload files in React Native
-// https://aboutreact.com/file-uploading-in-react-native/
-
-// Import React
 import React, { useState } from "react";
-// Import core components
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-
-// Import Document Picker
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  TextInput,
+  Dimensions,
+  Image,
+} from "react-native";
 import * as DocumentPicker from "expo-document-picker";
+import { LinearGradient } from "expo-linear-gradient";
+import { styles } from "./styles";
+import { GradientBtn } from "../../components/GradientButton";
+import { GoBackButton } from "../../components/GoBackButton";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-const AddExam = () => {
+import FileIcon from "../../assets/file-icon.png";
+import Checked from "../../assets/checked.png";
+
+const AddExam = ({ navigation }) => {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
   const [singleFile, setSingleFile] = useState(null);
 
   const uploadImage = async () => {
@@ -62,84 +72,75 @@ const AddExam = () => {
     }
   };
   return (
-    <View style={styles.mainBody}>
-      <View style={{ alignItems: "center" }}>
-        <Text style={{ fontSize: 30, textAlign: "center" }}>
-          React Native File Upload Example
-        </Text>
-        <Text
-          style={{
-            fontSize: 25,
-            marginTop: 20,
-            marginBottom: 30,
-            textAlign: "center",
-          }}
-        >
-          www.aboutreact.com
-        </Text>
-      </View>
-      {/*Showing the data of selected Single file*/}
-      {singleFile != null ? (
-        <Text style={styles.textStyle}>
-          File Name: {singleFile.name ? singleFile.name : ""}
-          {/* {"\n"} */}
-          {/* Type: {singleFile.type ? singleFile.type : ""}
-          {"\n"}
-          File Size: {singleFile.size ? singleFile.size : ""}
-          {"\n"}
-          URI: {singleFile.uri ? singleFile.uri : ""}
-          {"\n"} */}
-        </Text>
-      ) : null}
-      <TouchableOpacity
-        style={styles.buttonStyle}
-        activeOpacity={0.5}
-        onPress={selectFile}
+    <LinearGradient
+      colors={["#1982C6", "#55D9C8"]}
+      start={{ x: 0.25, y: 0.85 }}
+      end={{ x: 1, y: 0.4 }}
+      style={{ height: "100%" }}
+    >
+      <KeyboardAwareScrollView
+        resetScrollToCoords={{ x: 0, y: 0 }}
+        contentContainerStyle={[
+          styles.container,
+          { height: Dimensions.get("window").height },
+        ]}
+        scrollEnabled={false}
+        style={{ height: Dimensions.get("window").height }}
+        automaticallyAdjustContentInsets={false}
       >
-        <Text style={styles.buttonTextStyle}>Select File</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.buttonStyle}
-        activeOpacity={0.5}
-        onPress={uploadImage}
-      >
-        <Text style={styles.buttonTextStyle}>Upload File</Text>
-      </TouchableOpacity>
-    </View>
+        <GoBackButton navigation={navigation} />
+        <Text style={styles.title}>Adicionar exame</Text>
+        <View style={styles.content}>
+          <View>
+            <Text style={styles.subtitle}>Nome:</Text>
+            <TextInput
+              multiline
+              placeholder={"Insira o nome"}
+              style={styles.inputStyle}
+              onChangeText={setName}
+              value={name}
+            />
+          </View>
+          <View>
+            <Text style={styles.subtitle}>Descrição:</Text>
+            <TextInput
+              multiline
+              placeholder={"Insira a descrição"}
+              style={styles.inputStyle}
+              onChangeText={setDescription}
+              value={description}
+            />
+          </View>
+          <View>
+            <Text style={styles.subtitle}>Forma de envio:</Text>
+            <TouchableOpacity activeOpacity={0.5} onPress={selectFile}>
+              <View style={styles.addDocument}>
+                <View style={styles.addBorder}>
+                  <Image
+                    source={singleFile ? Checked : FileIcon }
+                    style={styles.docImage}
+                    resizeMode="stretch"
+                  />
+                  <Text
+                    style={{ color: "#0005", fontSize: 15, fontWeight: "700" }}
+                  >
+                     {singleFile ? singleFile.name : "Selecione um arquivo"}
+                  </Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity
+            onPress={uploadImage}
+            style={styles.opacityBtn}
+            activeOpacity={0.75}
+          >
+            <GradientBtn style={styles.button}>Enviar</GradientBtn>
+          </TouchableOpacity>
+        </View>
+      </KeyboardAwareScrollView>
+    </LinearGradient>
   );
 };
-
-const styles = StyleSheet.create({
-  mainBody: {
-    flex: 1,
-    justifyContent: "center",
-    padding: 20,
-  },
-  buttonStyle: {
-    backgroundColor: "#307ecc",
-    borderWidth: 0,
-    color: "#FFFFFF",
-    borderColor: "#307ecc",
-    height: 40,
-    alignItems: "center",
-    borderRadius: 30,
-    marginLeft: 35,
-    marginRight: 35,
-    marginTop: 15,
-  },
-  buttonTextStyle: {
-    color: "#FFFFFF",
-    paddingVertical: 10,
-    fontSize: 16,
-  },
-  textStyle: {
-    backgroundColor: "#fff",
-    fontSize: 15,
-    marginTop: 16,
-    marginLeft: 35,
-    marginRight: 35,
-    textAlign: "center",
-  },
-});
 
 export default AddExam;
