@@ -3,10 +3,15 @@ import { TouchableOpacity, Text, Image } from "react-native";
 import { styles } from "./styles";
 import RightArrow from "../../assets/right-arrow.png";
 
-export const ProfileBtn = (props) => {
+export const ProfileBtn = ({ navigation, to, title }) => {
   return (
-    <TouchableOpacity style={styles.BtnWrapper}>
-      <Text style={styles.BtnText}>{props.title}</Text>
+    <TouchableOpacity
+      style={styles.BtnWrapper}
+      onPress={() => {
+        navigation.navigate(to);
+      }}
+    >
+      <Text style={styles.BtnText}>{title}</Text>
       <Image source={RightArrow} style={styles.image} resizeMode="stretch" />
     </TouchableOpacity>
   );

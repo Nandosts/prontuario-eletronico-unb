@@ -1,8 +1,11 @@
 import React from "react";
-import { FirstScreen } from "./src/screens/FirstScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import Routes from "./src/Routes";
 
 export default function App() {
   return (
-  <FirstScreen />
+    <NavigationContainer>
+      <Routes />
+    </NavigationContainer>
   );
 }

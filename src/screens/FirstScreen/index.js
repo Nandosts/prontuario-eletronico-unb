@@ -6,7 +6,7 @@ import { GradientBtn } from "../../components/GradientButton";
 import { ProfileBtn } from "../../components/ProfileButton";
 import UserPhoto from "../../assets/user-photo.png";
 
-export const FirstScreen = () => {
+const FirstScreen = ({ navigation }) => {
   return (
     <LinearGradient
       colors={["#1982C6", "#55D9C8"]}
@@ -21,9 +21,12 @@ export const FirstScreen = () => {
         <Text style={styles.subtitle}>usuário@gmail.com</Text>
       </View>
       <View style={styles.content}>
-        <View style={{marginTop: 10}}>
-          <ProfileBtn title="Teste" />
-          <ProfileBtn title="Teste" />
+        <View style={{ marginTop: 10 }}>
+          <ProfileBtn
+            title="Falar com um profissional"
+            navigation={navigation}
+            to="TalkToProfessional"
+          />
         </View>
         <TouchableOpacity style={styles.opacityBtn} activeOpacity={0.75}>
           <GradientBtn style={styles.button}>Sair</GradientBtn>
@@ -32,3 +35,5 @@ export const FirstScreen = () => {
     </LinearGradient>
   );
 };
+
+export default FirstScreen;
