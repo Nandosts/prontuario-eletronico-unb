@@ -11,9 +11,10 @@ import { styles } from "./styles";
 import { sendEmail } from "../../components/SendEmail";
 import { GradientBtn } from "../../components/GradientButton";
 import { Select } from "../../components/Select";
+import { GoBackButton } from "../../components/GoBackButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-const TalkToProfessional = () => {
+const TalkToProfessional = ({navigation}) => {
   const [professional, setProfessional] = React.useState("");
   const [subject, setSubject] = React.useState("");
   const [text, setText] = React.useState("");
@@ -43,6 +44,7 @@ const TalkToProfessional = () => {
         style={{ height: Dimensions.get("window").height }}
         automaticallyAdjustContentInsets={false}
       >
+        <GoBackButton navigation={navigation}/>
         <Text style={styles.title}>Falar com um profissional</Text>
         <View style={styles.content}>
           <View>
