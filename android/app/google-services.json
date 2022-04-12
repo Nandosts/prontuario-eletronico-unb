@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "766041109250",
+    "project_id": "prontuario-eletronico-2c4fe",
+    "storage_bucket": "prontuario-eletronico-2c4fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766041109250:android:e4c3e27f81e820310d881b",
+        "android_client_info": {
+          "package_name": "prontuario.eletronico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766041109250-voqvv598j10p4krkgokbtai2g010v0le.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx38zaZ2zqWrrQgiIBPQikb0CIxXTiV_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766041109250-voqvv598j10p4krkgokbtai2g010v0le.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

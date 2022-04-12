@@ -31,13 +31,13 @@ const AddExam = ({ navigation }) => {
       data.append("name", "Image Upload");
       data.append("file_attachment", fileToUpload);
       // Please change file upload URL
-      let res = await fetch("http://localhost/upload.php", {
+      let res = await fetch("https://prontuario-eletronico-2c4fe-default-rtdb.firebaseio.com/", {
         method: "post",
         body: data,
         headers: {
           "Content-Type": "multipart/form-data; ",
         },
-      });
+      }).catch((e)=> console.log(e))
       let responseJson = await res.json();
       if (responseJson.status == 1) {
         alert("Upload Successful");
