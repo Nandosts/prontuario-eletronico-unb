@@ -27,6 +27,11 @@ const FirstScreen = ({ navigation }) => {
             navigation={navigation}
             to="TalkToProfessional"
           />
+          <ProfileBtn
+            title="Suporte"
+            navigation={navigation}
+            to="Support"
+          />
         </View>
         <TouchableOpacity style={styles.opacityBtn} activeOpacity={0.75}>
           <GradientBtn style={styles.button}>Sair</GradientBtn>
