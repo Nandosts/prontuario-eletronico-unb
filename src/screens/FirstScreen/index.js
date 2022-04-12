@@ -32,6 +32,11 @@ const FirstScreen = ({ navigation }) => {
             navigation={navigation}
             to="Support"
           />
+          <ProfileBtn
+            title="Adicionar Exame"
+            navigation={navigation}
+            to="AddExam"
+          />
         </View>
         <TouchableOpacity style={styles.opacityBtn} activeOpacity={0.75}>
           <GradientBtn style={styles.button}>Sair</GradientBtn>

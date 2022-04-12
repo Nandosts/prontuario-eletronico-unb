@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import FirstScreen from "../screens/FirstScreen";
 import TalkToProfessional from "../screens/TalkToProfessional";
 import Support from "../screens/Support";
+import AddExam from "../screens/AddExam";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,13 @@ const Routes = () => {
       <Stack.Screen
         name="Support"
         component={Support}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="AddExam"
+        component={AddExam}
         options={{
           headerShown: false,
         }}
