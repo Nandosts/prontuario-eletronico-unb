@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "prontuario-eletronico",
+    "name": "Prontuário Eletrônico",
     "slug": "prontuario-eletronico",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,6 +20,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "prontuario.eletronico",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
