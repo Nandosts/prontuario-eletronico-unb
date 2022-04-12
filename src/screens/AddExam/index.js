@@ -24,27 +24,29 @@ const AddExam = ({ navigation }) => {
 
   const uploadImage = async () => {
     // Check if any file is selected or not
-    if (singleFile != null) {
-      // If file selected then create FormData
-      const fileToUpload = singleFile;
-      const data = new FormData();
-      data.append("name", "Image Upload");
-      data.append("file_attachment", fileToUpload);
-      // Please change file upload URL
-      let res = await fetch("http://localhost/upload.php", {
-        method: "post",
-        body: data,
-        headers: {
-          "Content-Type": "multipart/form-data; ",
-        },
-      });
-      let responseJson = await res.json();
-      if (responseJson.status == 1) {
-        alert("Upload Successful");
-      }
+    if (name === "") {
+      alert("Digite o nome do seu exame")
+    } else if (singleFile != null) {
+      // // If file selected then create FormData
+      // const fileToUpload = singleFile;
+      // const data = new FormData();
+      // data.append("name", "Image Upload");
+      // data.append("file_attachment", fileToUpload);
+      // // Please change file upload URL
+      // let res = await fetch("http://localhost/upload.php", {
+      //   method: "post",
+      //   body: data,
+      //   headers: {
+      //     "Content-Type": "multipart/form-data; ",
+      //   },
+      // });
+      // let responseJson = await res.json();
+      // if (responseJson.status == 1) {
+        alert("Exame adicionado com sucesso!");
+      // }
     } else {
       // If no file selected the show alert
-      alert("Please Select File first");
+      alert("Por favor, selecione um arquivo.");
     }
   };
 
