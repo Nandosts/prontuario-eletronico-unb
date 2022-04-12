@@ -2,10 +2,8 @@ import React from "react";
 import {
   View,
   Text,
-  Button,
   TextInput,
   TouchableOpacity,
-  Image,
   Dimensions,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
