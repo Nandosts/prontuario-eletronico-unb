@@ -13,7 +13,7 @@ import { GradientBtn } from "../../components/GradientButton";
 import { Select } from "../../components/Select";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-export const FirstScreen = () => {
+const TalkToProfessional = () => {
   const [professional, setProfessional] = React.useState("");
   const [subject, setSubject] = React.useState("");
   const [text, setText] = React.useState("");
@@ -88,3 +88,5 @@ export const FirstScreen = () => {
     </LinearGradient>
   );
 };
+
+export default TalkToProfessional
