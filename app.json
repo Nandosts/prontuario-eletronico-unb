@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "prontuario-eletronico",
+    "name": "Prontuário Eletrônico",
     "slug": "prontuario-eletronico",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,16 +17,20 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "prontuario.eletronico"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "prontuario.eletronico"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Este projeto foi feito para um projeto da UnB, de implementar ao menos 1 funcionalidade, na matéria de Sistemas de Informação. Foi prototipado em nossa página do figma. \n\nO projeto foi realizado com React Native, utilizando expo para testar e gerar o apk. Você pode baixar o APK para testes no drive: https://drive.google.com/file/d/1UhDucFgTZl0VixWpm87n5qdPWCB8lFEH/view?usp=sharing, funcionando para android apenas. Está sujeito a alterações futuras para melhorias, por questões de mais aprendizado e diversão.",
+    "githubUrl": "https://github.com/Nandosts/prontuario-eletronico-unb"
   }
 }
