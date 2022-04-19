@@ -54,3 +54,16 @@ Menção especial ao Gabriel, meu que colaborou comigo no desenvolvimento do app
     </td>
   </tr>
 </table>
+
+## Como rodar o projeto: 
+Deve ser feita a instalação do expo e dos seus requisitos, por meio do link https://docs.expo.dev/get-started/installation/
+
+Clone esse repositório com git, utilizando em algum terminal de sua preferência `git clone https://github.com/Nandosts/prontuario-eletronico-unb.git`
+
+E então:
+```sh
+  git clone https://github.com/Nandosts/prontuario-eletronico-unb.git &&
+  cd prontuario-eletronico-unb &&
+  npm install &&
+  expo start
+```
